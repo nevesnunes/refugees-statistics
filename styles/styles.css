@@ -1,0 +1,218 @@
+body {
+    padding-top: 50px;
+}
+
+.container{
+    margin: auto !important;
+    display: block !important;
+}
+
+div {
+    vertical-align: top;
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.panel-title{
+    width: auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/*
+.navbar-collapse.collapse.in .nav.navbar-nav {
+    float: left !important;
+}
+*/
+
+.navbar-default .navbar-brand.no-link:hover,
+.navbar-default .navbar-brand.no-link:focus {
+    color: #FFF;
+}
+
+.no-link {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.navbar-brand > img {
+    display: inline-block;
+    height: 41px;
+    margin-right: 10px;
+    margin-top: -10px;
+}
+
+
+/* Make font size of slider scale bigger */
+
+.jslider div.jslider-scale ins {
+    margin-left: -18px;
+    font-size: 11px !important;
+}
+
+
+/* Hide the label of the values */
+
+.jslider div.jslider-value span {
+    visibility: hidden;
+        
+}
+
+.jslider div.jslider-value{
+    background: rgba(255, 255, 255, 0) !important;
+}
+
+/* Hide the label of the slider */
+
+.jslider-label span {
+    visibility: hidden;
+}
+
+
+/* Make the slider pointer bigger 
+.jslider.sliderCSS div.jslider-pointer {
+    top: -6px !important;
+    width: 15px !important;
+    height: 15px !important;
+    margin-left: -7.5px !important;
+}
+*/
+
+
+.checkboxInTable {
+    position: relative;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+
+.jslider.disabled {
+    opacity: 1.0 !important;
+}
+
+.flag {
+    border: 1px solid #C0C0C0;
+}
+
+.countryTable tbody {
+    display: block;
+    height: 415px;
+    width: 280px;
+    font-size: 13px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.jslider {
+    display: inline-block;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#rangeSlider{
+    margin: 30px ;
+    margin-top: 0px ;
+    width: auto ;
+}
+
+#monthScaleText > g > line{
+    stroke: transparent;
+    stroke-width: 0;
+}
+
+.row.subpage{
+    text-align: center;
+}
+
+.row.subpage div{
+    padding: 30px;
+} 
+
+
+.row.subpage .description{
+    text-align: justify;
+}
+
+.img-circle{
+    border: solid #95A5A6 2px;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon i {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;    
+}
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+body > div.home.ng-scope > * {
+    display: inline-block;
+}
+
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    /*display: block !important; */
+}
+.cssFade {
+    transition: 0.5s linear all;
+    opacity: 1;
+}
+.cssFade.ng-hide {
+    opacity: 0;
+}
+.cssFade.ng-show {
+    opacity: 1;
+}
+
+
+.expanRemove{
+    -webkit-transition: width 1s; 
+    transition: width 1s;
+}
+.expanRemove.ng-hide {
+    width: 0px !important;
+}
+.expan{
+    width: 930px !important;
+}

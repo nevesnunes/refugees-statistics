@@ -1,0 +1,61 @@
+<div class="page-header">
+    <h1>Correlation between number of refugees and distance between origin and destination country</h1>
+    <div class="panel panel-default" style="margin-left:30px; display:inline-block;width:auto">
+        <div class="panel-body" style="height:593px;">
+            <div class="right-inner-addon" style="margin-bottom:10px;">
+                <i class="glyphicon glyphicon-search"></i>
+                <input type="search" class="form-control" placeholder="Search for a country..." style="height:34px;" ng-model="searchText" />
+            </div>
+            <table class="table table-condensed table-bordered countryTable">
+                <tbody>
+                    <tr ng-repeat="country in countryList | filter:searchText" ng-style="{ 'background-color': colors(country.applicants) }">
+                        <td>
+                            <div class="checkbox checkboxInTable" style="width: 250px;">
+                                <label>
+                                    <input type="checkbox" ng-checked="country.selected" ng-click="check(country.iso2)">
+                                    <div style="width:36px;display: inline-block;text-align:center;margin-right:5px;"><img class="flag" ng-src="images/flags-normal/{{country.iso2 | lowercase}}.png" style="height:18px;"></div>{{country.country}}</label>
+                                <button class="btn btn-sm pull-right btn-distanceModule" ng-show="country.selected" ng-class="{'btn-distanceModule-selected':country.focus}" style="line-height: 0.5;" ng-click="focusButton(country.iso2)">focus</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center;">Number of refugees
+                <div>
+                    <div class="listLegend"></div>
+                    <div style="width:100%;font-size: 11px;">
+                        <div style="float: left; display: inline-block;">Low</div>
+                        <div style="float: right; display: inline-block;">High</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default expanRemove" style="margin-left:30px; display:inline-block;width:430px" ng-hide="mapExpandet">
+        <div class="panel-body" style="height:593px;">
+            <div id="distanceScatterplot" style="padding-top:50px"></div>
+            <div style="text-align: center;" ng-hide="mapExpandet">
+                Click on a dot to show detailed information for that country
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel panel-default" style="margin-left:30px; display:inline-block;width:480px;-webkit-transition: width 1s; transition: width 1s" ng-class="{'expan':mapExpandet}">
+        <div class="panel-body">
+            <div id="world-equidistant"></div>
+            <div style="text-align: center;">Number of refugees
+                <div>
+                    <div class="pathLegend"></div>
+                    <div style="width:100%;font-size: 11px;">
+                        <div style="float: left; display: inline-block;">Low</div>
+                        <div style="float: right; display: inline-block;">High</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-sm" style="margin-top:30px;" ng-click="expandMap()">
+                    <span class="glyphicon glyphicon-resize-full" ng-hide="mapExpandet" aria-hidden="true" style="margin-right: 10px;"></span>
+                    <span class="glyphicon glyphicon-resize-small" ng-show="mapExpandet" aria-hidden="true" style="margin-right: 10px;"></span> {{expandButtonText}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

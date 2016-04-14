@@ -1,0 +1,50 @@
+<div class="page-header">
+    <h1>Correlation between number of refugees and the destination country's GDP</h1>
+    <div style="margin-left:20px;">
+    <div class="panel panel-default" style="margin-left:30px; display:inline-block;width:auto">
+        <div class="panel-body">
+             <label style="width:100%;cursor:pointer;">
+                <input type="checkbox" ng-model="selectAllButton" ng-disabled="selectAllButton" ng-click="selectAll(selectAllButton)" style="margin-right:10px;margin-left:10px;"></input>Select all
+            </label>
+            <table class="table table-condensed table-bordered countryTable">
+                <tbody style="width: 186px;">
+                    <tr ng-repeat="country in countries" ng-style="{ 'background-color': colors(country.population) }">
+                        <td style="width:200px">
+                            <div class="checkbox checkboxInTable" ng-mouseover="hoverListItem(country.iso2, true)" ng-mouseleave="hoverListItem(country.iso2, false)" >
+                                <label >
+                                    <input type="checkbox" ng-checked="country.selected" ng-click="check(country.iso2)">
+                                    <div style="width:36px;display: inline-block;text-align:center;margin-right:5px;"><img class="flag" ng-src="images/flags-normal/{{country.iso2 | lowercase}}.png" style="height:18px;"></div>{{country.country}}</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center;">Population</div>
+            <div class="listLegend"></div>
+            <div style="width:100%;font-size: 11px;">
+                <div style="float: left; display: inline-block;">Low</div>
+                <div style="float: right; display: inline-block;">High</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-left:30px; display:inline-block;width:auto">
+        <div class="panel-body">
+            <div id="dotPlotGDP"></div>
+            <div id="timeline" style="margin-top:20px">
+                <a class="btn btn-primary btn-sm" ng-click="simulate()" ng-disabled="disabled" style="display: inline-block;"><span class="glyphicon glyphicon-play"></span> Play</a>
+                <div style="display: inline-block; width:400px; margin-left:20px; margin-right:20px">
+                    <input ng-model="currentYear" type="text" id="timeline" slider options="options" ng-disabled="disabled" ng-change="changeTime()" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-left:30px; display:inline-block;width:auto">
+        <div class="panel-body">
+            <div id="scatterPlotGDP"></div>
+            <button class="btn btn-sm" ng-click="outliersButton()" ng-class="buttonClass" style="margin-top:20px;">{{buttonText}}</button>
+       
+        </div>
+    </div>
+    </div>
+</div>

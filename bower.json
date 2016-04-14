@@ -1,0 +1,19 @@
+{
+  "name": "information_visualization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "angular-route": "1.4.x",
+    "d3": "~3.5.6",
+    "angular-awesome-slider": "~2.4.3",
+    "d3-tip": "~0.6.7"
+  }
+}
